@@ -2,9 +2,14 @@
 document.addEventListener(
     "DOMNodeInserted",
     function (e) {
-        var url = chrome.extension.getURL("can.gif");
-        //replace can with gif of can
-        var can = document.body.innerHTML.replace(/can/, "<img src='" + url + "'/>");
+        //if chat-line-message
+        if (e.target.className == "chat-line__message") {
+            //if message contains "can"
+            if (e.target.innerText.includes("can")) {
+                //replace "can" with can.gif
+                e.target.innerHTML = e.target.innerHTML.replace(/can/g, '<img src="https://i.imgur.com/dnqKfZY.gif" width="30" height="30">');
+            }
+        }
     },
     false
 );

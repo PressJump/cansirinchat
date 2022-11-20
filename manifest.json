@@ -15,7 +15,8 @@
     "content_scripts": [
         {
             "all_frames": true,
-            "matches": ["<all_urls>"],
+            //matches twitch.tv
+            "matches": ["*://*.twitch.tv/*"],
             "js": ["content.js"]
         }
     ]
