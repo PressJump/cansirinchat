@@ -5,17 +5,11 @@
 
     "permissions": ["menus", "tabs", "<all_urls>", "theme"],
 
-    "background": {
-        "scripts": ["background.js"]
-    },
-
-    //web accessible can.gif
     "web_accessible_resources": ["can.gif"],
 
     "content_scripts": [
         {
             "all_frames": true,
-            //matches twitch.tv
             "matches": ["*://*.twitch.tv/*"],
             "js": ["content.js"]
         }
